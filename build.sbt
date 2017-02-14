@@ -11,3 +11,5 @@ libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-reflect" % "2.11.8",
   "org.scalatest" %% "scalatest" % "3.0.1" % Test
 )
+
+parallelExecution in Test := false

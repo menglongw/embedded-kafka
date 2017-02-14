@@ -13,6 +13,8 @@ class EmbeddedZooKeeperConfig {
   var sessionTimeoutMs: Int = 0
   var connectionTimeoutMs: Int = 0
   var securityEnabled: Boolean = false
+
+  def connectString: String = host+":"+port
 }
 
 object EmbeddedZooKeeperConfig {
@@ -20,7 +22,7 @@ object EmbeddedZooKeeperConfig {
   def getDefaultConfig(): EmbeddedZooKeeperConfig = {
     val config = new EmbeddedZooKeeperConfig()
     config.host = "0.0.0.0"
-    config.port = 2182
+    config.port = 2181
     config.snapDir = Directory(new File("zooKeeperSnap"))
     config.logDir = Directory(new File("zooKeeperLog"))
     config.tickTime = 1000
